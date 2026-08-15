@@ -2,8 +2,8 @@ defmodule Scry.Engine.Neo4j.Conn do
   @moduledoc """
   Wraps a `boltx` connection pid -- opened once via `open/1` and meant
   to be reused across many `Scry.Engine.Neo4j.execute/3` calls, matching
-  the connection/config struct every real adapter exposes (impl_spec.md
-  §2). `boltx` is DBConnection-based (`Boltx.start_link/1`), the same
+  the connection/config struct every real adapter exposes. `boltx` is
+  DBConnection-based (`Boltx.start_link/1`), the same
   supervised-reconnecting-process shape `redix`/`myxql`/`postgrex`
   already have -- unlike those, though, `query/3` here always wraps the
   real call in a `try`/`rescue`.

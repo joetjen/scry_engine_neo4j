@@ -43,7 +43,7 @@ defmodule Scry.Engine.Neo4j.MixProject do
       # `Scry.Core.EngineBehaviour` and returns `Scry.Core.Query.t()`-
       # shaped data, so it's the real dependency, not test-only. Switch
       # to a `~> x.y` Hex requirement once scry_core is actually
-      # published (impl_spec.md's own dependency-versions convention).
+      # published.
       {:scry_core, path: "../scry_core"},
 
       # === PARITY TESTING ===
@@ -51,14 +51,14 @@ defmodule Scry.Engine.Neo4j.MixProject do
       # since AGENTS.md's "Parity between multiple implementations" rule
       # applies directly here: the reference executor and this real
       # adapter are two implementations of the identical VIA/PATH
-      # semantics (lang_spec.md §8.1), so the test suite runs the exact
-      # same fixture and queries against both and asserts equal results,
-      # not just "this package's own output looks plausible".
+      # semantics, so the test suite runs the exact same fixture and
+      # queries against both and asserts equal results, not just "this
+      # package's own output looks plausible".
       {:scry_graph, path: "../scry_graph", only: :test},
 
       # === NEO4J DRIVER ===
-      # `bolt_sips` (the driver impl_spec.md's own roadmap names) is
-      # confirmed stale -- last Hex release April 2021, and its own
+      # `bolt_sips` (the originally planned driver) is confirmed stale
+      # -- last Hex release April 2021, and its own
       # README now points to `boltx` as the maintained successor.
       # `boltx` itself is pre-1.0 (last Hex release Feb 2024) and has
       # a real, confirmed rough edge (a `FAILURE` response on certain

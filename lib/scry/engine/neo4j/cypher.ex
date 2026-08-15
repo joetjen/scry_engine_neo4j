@@ -2,7 +2,7 @@ defmodule Scry.Engine.Neo4j.Cypher do
   @moduledoc """
   The one piece of real Cypher generation `Scry.Engine.Neo4j` needs --
   building the `MATCH`/traversal shape for one `VIA <edge> [modifiers]`
-  item (lang_spec.md §8.1). Everything else `VIA`'s own `opts` can carry
+  item. Everything else `VIA`'s own `opts` can carry
   (`WHERE`/`ORDER BY`/`DISTINCT`/`LIMIT`/`OFFSET`) is deliberately *not*
   translated here at all -- `Scry.Engine.Neo4j.resolve_via/7`'s own
   moduledoc has the full reasoning, but in short: those all apply
@@ -79,9 +79,9 @@ defmodule Scry.Engine.Neo4j.Cypher do
   `shortest?` prefixing the match with `SHORTEST 1` (this module's own
   moduledoc has the "one path per end node, not every tie" scope note).
   Returns `end` (the candidate node) and `nodes(p)` (the full ordered
-  path, start through end inclusive -- `PATH`'s own row shape,
-  lang_spec.md §8.1) unfiltered, unordered -- every other `opts` field
-  applies afterward, generically, not here.
+  path, start through end inclusive -- `PATH`'s own row shape)
+  unfiltered, unordered -- every other `opts` field applies afterward,
+  generically, not here.
   """
   @spec via_match_query([String.t()], {pos_integer(), pos_integer()}, boolean(), boolean()) ::
           String.t()

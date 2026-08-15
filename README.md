@@ -21,9 +21,8 @@ implements `Scry.Core.EngineBehaviour` directly instead, translating
 each `VIA` traversal into a real Cypher query rather than calling
 `Scry.Graph.Executor` at all.
 
-Source: <https://github.com/joetjen/scry_engine_neo4j>. Specs live in
-the separate [`scry`](https://github.com/joetjen/scry) repository; the
-behaviour this implements lives in
+Source: <https://github.com/joetjen/scry_engine_neo4j>. The behaviour
+this implements lives in
 [`scry_core`](https://github.com/joetjen/scry_core).
 
 ## Usage
@@ -49,7 +48,7 @@ docker run -d --name scry-neo4j -p 7687:7687 -e NEO4J_AUTH=neo4j/scrytest123 neo
 
 ## Driver: `boltx`, not `bolt_sips`
 
-`bolt_sips` -- the driver impl_spec.md's own roadmap names -- is
+`bolt_sips` -- the originally planned driver -- is
 confirmed stale: last Hex release April 2021, and its own README now
 points to `boltx` as the maintained successor. `boltx` itself is pre-1.0
 (last Hex release Feb 2024) and has a real, confirmed rough edge (see

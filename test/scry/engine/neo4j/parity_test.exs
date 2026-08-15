@@ -4,8 +4,8 @@ defmodule Scry.Engine.Neo4j.ParityTest do
   directly: `scry_graph`'s own reference `Scry.Graph.Executor` (a naive
   recursive-DFS path enumerator over an in-memory graph) and this
   package's `Scry.Engine.Neo4j` (a real Cypher-backed adapter) are two
-  implementations of the identical `VIA`/`PATH` semantics (lang_spec.md
-  §8.1). Rather than asserting each package's own output looks
+  implementations of the identical `VIA`/`PATH` semantics. Rather than
+  asserting each package's own output looks
   plausible in isolation, this suite parses one query text *once*
   (`Scry.Graph.parse/1`, the same grammar/AST both engines are handed),
   then runs the exact same `%Scry.Core.Query{}` against a byte-for-byte
