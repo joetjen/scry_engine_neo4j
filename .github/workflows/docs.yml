@@ -26,6 +26,9 @@ jobs:
       - name: Checkout scry_graph (path dependency)
         run: git clone --depth 1 https://github.com/joetjen/scry_graph.git ../scry_graph
 
+      - name: Checkout dextrin (path dependency)
+        run: git clone --depth 1 https://github.com/joetjen/dextrin.git ../dextrin
+
       - name: Set up Elixir
         id: beam
         uses: erlef/setup-beam@v1
